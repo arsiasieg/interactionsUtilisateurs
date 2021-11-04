@@ -1,0 +1,27 @@
+.list-kitten-container{
+    padding: 2rem;
+    border : 3px solid red;
+}
+
+.displayFlex{
+    display: flex;
+}
+
+app-user-kitten{
+    width: 350px;
+}
+
+app-create-kitten{
+    width: 700px;
+}
+
+.card-container{
+    border : 3px solid black;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.card{
+    width: 20%;
+}

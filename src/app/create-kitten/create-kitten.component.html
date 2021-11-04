@@ -1,0 +1,23 @@
+<h1>ADD YOUR KITTEN</h1>
+<form class="row g-2" #kitten="ngForm" [formGroup]="kittenForm" (ngSubmit)="kittenForm.valid && createKitten()">
+    <div class="col-md-3">
+      <label for="nameKitten" class="form-label">Name</label>
+      <input type="text" name="nameKitten" class="form-control" formControlName ="nameKitten">
+    </div>
+    <div class="col-md-3">
+      <label for="raceKitten" class="form-label">Race</label>
+      <input type="text" name="raceKitten" class="form-control" formControlName ="raceKitten">
+    </div>
+    <div class="col-md-3">
+        <label for="birthdayKitten" class="form-label">Birthday</label>
+        <input type="date" name="birthdayKitten" class="form-control" formControlName ="birthdayKitten">
+    </div>
+    <div class="col-md-6">
+      <label for="pictureKitten" class="form-label">Picture</label>
+      <input type="text" name="pictureKitten" class="form-control" formControlName ="pictureKitten">
+    </div>
+    <div class="col-12">
+      <button class="btn btn-primary" type="submit" [disabled]="kitten.invalid">Submit</button>
+    </div>
+  </form>
+

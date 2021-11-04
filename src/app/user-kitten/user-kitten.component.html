@@ -1,0 +1,19 @@
+    <div class="user-container">
+        <h2>MY KITTEN</h2>
+        <div *ngIf="addKittenOnFavorite!= undefined; else noFavoriteKitten" class="favorite-container">
+            <div *ngFor="let kittenFavorite of addKittenOnFavorite">
+                <div class="card">
+                    <img src="{{kittenFavorite.picture}}" class="card-img-top" alt="little kitten 1">
+                    <div class="card-body">
+                      <h5 class="card-title">{{kittenFavorite.name}}</h5>
+                      <p class="card-text">{{kittenFavorite.race}}</p>
+                      <p class="card-text">{{kittenFavorite.birthday}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <ng-template #noFavoriteKitten>
+            There are no favorite kitten (for now).
+        </ng-template>
+        
+    </div>
