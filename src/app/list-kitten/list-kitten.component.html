@@ -1,25 +1,23 @@
-<div class="displayFlex">
-  <div class="list-kitten-container">
-    <app-create-kitten (emitNewKitten)="addKittenOnList($event)"></app-create-kitten>
-    <div class="card-container" *ngIf="listKitten !== undefined; else noKitten">
-      <div class="card" *ngFor="let kitten of listKitten">
-        <img src="{{kitten.picture}}" class="card-img-top" alt="little kitten">
-        <div class="card-body">
-          <h5 class="card-title">{{kitten.name}}</h5>
-          <p class="card-text">{{kitten.race}}</p>
-          <p class="card-text">{{kitten.birthday}}</p>
-          <button class="btn btn-primary" type="button" (click)="addKittenOnUser(kitten)">Adopt</button>
-        </div>
-      </div> 
-    </div>
+<app-user-kitten [favoriteKittenList]="adoptKitten"></app-user-kitten>
+<app-create-kitten (emitNewKitten) = "addNewKitten($event)"></app-create-kitten>
 
-    <ng-template #noKitten>
-      <p>There are no kitten wet.</p>
-    </ng-template>
+<div class="list-kitten-container">
+  <div *ngIf="listKitten.length > 0; else noKitten" class="card-container" >
+    <div *ngFor="let kitten of listKitten" class="card">
+      <img src="{{kitten.picture}}" class="card-img-top" alt="little kitten">
+      <div class="card-body">
+        <h5 class="card-title">{{kitten.name}}</h5>
+        <p class="card-text">{{kitten.race}}</p>
+        <p class="card-text">{{kitten.birthday}}</p>
+        <button class="btn btn-primary" type="button" (click)="addKittenOnFavorite(kitten)" >Adopt</button>
+      </div>
+    </div> 
   </div>
-  
-  <app-user-kitten [addKittenOnFavorite]="adoptKitten"></app-user-kitten>
 </div>
+
+<ng-template #noKitten>
+  <p>There are no kitten wet.</p>
+</ng-template>
 
   
 

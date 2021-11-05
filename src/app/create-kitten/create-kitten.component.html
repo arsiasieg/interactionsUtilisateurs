@@ -1,5 +1,5 @@
 <h1>ADD YOUR KITTEN</h1>
-<form class="row g-2" #kitten="ngForm" [formGroup]="kittenForm" (ngSubmit)="kittenForm.valid && createKitten()">
+<form class="row g-2" #kitten="ngForm" [formGroup]="kittenForm" (ngSubmit)="kittenForm.valid && createNewKitten()">
     <div class="col-md-3">
       <label for="nameKitten" class="form-label">Name</label>
       <input type="text" name="nameKitten" class="form-control" formControlName ="nameKitten">
@@ -20,4 +20,6 @@
       <button class="btn btn-primary" type="submit" [disabled]="kitten.invalid">Submit</button>
     </div>
   </form>
+
+  <p *ngIf="isKittenAdd"> Your kitten has been added to the list !</p>
 

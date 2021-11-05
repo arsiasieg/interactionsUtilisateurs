@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component, EventEmitter, Input, Output} from '@angular/core';
 import { Kitten } from '../shared/model/kitten.model';
 
 @Component({
@@ -7,19 +7,21 @@ import { Kitten } from '../shared/model/kitten.model';
   styleUrls: ['./list-kitten.component.css']
 })
 export class ListKittenComponent  {
-  listKitten : Kitten[]
-  adoptKitten : Kitten[]
+  listKitten: Kitten[]
+  adoptKitten: Kitten[]
 
   constructor(){
-    this.listKitten = []
+    this.listKitten = [new Kitten("Muta", "Européen", "2019-08-15", "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTw8bsrRJOtb1iYgZMUxwPQbMK5lW0dDBhlg&usqp=CAU")]
     this.adoptKitten = []
   }
 
-  addKittenOnList(kitten: Kitten){
+  //Ajoute le chaton avec ses informations (provenance : create-kitten.component) aux tableaux de chatons
+  addNewKitten(kitten: Kitten){
     this.listKitten.push(kitten)
   }
 
-  addKittenOnUser(newKitten: Kitten){
+  //En cliquant sur adopter, le chaton sélectionné est supprimé de la liste et ajouter aux favoris de l'utilisateur
+  addKittenOnFavorite(newKitten: Kitten){
     this.adoptKitten.push(newKitten)
     for(let i=0; i < this.listKitten.length; i++){
       if (this.listKitten[i] == newKitten){

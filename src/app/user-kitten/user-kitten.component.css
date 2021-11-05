@@ -1,14 +1,16 @@
 .user-container{
-    width: 20%;
-    position: fixed;
-    right: 0;
+    width: 15%;
     height: 100vh;
-    background-color: rgba(192, 141, 107, 0.8);
-    border-radius: 20px 0 0 20px;
-    box-shadow: 3px 3px 7px silver;
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: rgb(192, 141, 107);
+    border-radius: 20px 0 0 0;
+    box-shadow: -3px 0px 7px rgb(87, 87, 87);
+    z-index: 1;
 }
 
-.user-container h2{
+.user-container h2, .text-center{
     text-align: center;
 }
 

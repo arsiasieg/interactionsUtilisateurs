@@ -1,0 +1,12 @@
+.global-page{
+    width: 80%;
+    padding: 1rem;
+}
+
+h2{
+    width: 20%;
+    text-align: center;
+    background-color: rgba(192, 141, 107, 0.8);
+    border-radius: 0 20px 20px 0;
+    box-shadow: 3px 3px 3px rgb(87, 87, 87);
+}

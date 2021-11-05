@@ -2,10 +2,10 @@
 export class Kitten {
     name: string
     race: string
-    birthday: Date
+    birthday: string
     picture: string
 
-    constructor(name: string, race: string, birthday:Date, picture: string){
+    constructor(name: string, race: string, birthday:string, picture: string){
         this.name = name
         this.race = race
         this.birthday = birthday

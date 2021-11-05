@@ -8,8 +8,9 @@ import { Kitten } from '../shared/model/kitten.model';
   styleUrls: ['./create-kitten.component.css']
 })
 export class CreateKittenComponent  {
+  isKittenAdd: boolean
 
-  //Valeurs des inputs du formulaire de création de kitten
+  //Valeurs des inputs du formulaire de création du chaton
   kittenForm = this.fb.group({
     nameKitten : ["", Validators.required],
     raceKitten : ["", Validators.required],
@@ -19,15 +20,21 @@ export class CreateKittenComponent  {
 
   @Output() emitNewKitten: EventEmitter<Kitten> = new EventEmitter<Kitten>()
 
+
   constructor(private fb: FormBuilder){
+
+    this.isKittenAdd = false
   }
 
-  //Création d'un potit kitten
-  createKitten(){
+  //Initialisation des informations du nouveau chaton dans l'output
+  createNewKitten(){
     this.emitNewKitten.emit(new Kitten(
       this.kittenForm.controls.nameKitten.value,
       this.kittenForm.controls.raceKitten.value,
       this.kittenForm.controls.birthdayKitten.value,
-      this.kittenForm.controls.pictureKitten.value,))
+      this.kittenForm.controls.pictureKitten.value))
+      console.log(this.emitNewKitten)
+    this.kittenForm.reset
+    this.isKittenAdd = true;
   }
 }

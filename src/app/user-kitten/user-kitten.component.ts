@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit } from '@angular/core';
 import { Kitten } from '../shared/model/kitten.model';
 
 @Component({
@@ -6,17 +6,15 @@ import { Kitten } from '../shared/model/kitten.model';
   templateUrl: './user-kitten.component.html',
   styleUrls: ['./user-kitten.component.css']
 })
-export class UserKittenComponent implements OnInit  {
+export class UserKittenComponent implements OnInit {
 
-  @Input() addKittenOnFavorite : Kitten[] | undefined;
-
+  @Input() favoriteKittenList: Kitten[]|undefined
 
   constructor(){
   }
 
   ngOnInit(){
-    
   }
-  
+
 
 }

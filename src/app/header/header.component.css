@@ -1,0 +1,51 @@
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    width: 80%;
+    margin-bottom: 3rem;
+}
+
+.title-logo{
+    display: flex;
+    align-items: flex-end;
+}
+
+.logo{
+    max-width: 150px;
+    min-width: 100px;
+    margin-right: -10px;
+}
+
+h1{
+    margin-bottom: 0;
+    text-shadow: 3px 3px 3px rgb(87, 87, 87);
+}
+
+
+.navbar{
+    width: 40%;
+    display: flex;
+    align-items: flex-end;
+    padding: 0;
+    margin-right : 3rem;
+}
+
+.button{
+    display: flex;
+    align-items: center;
+}
+
+
+.navbar a p{
+    display: flex;
+    color: black;
+    font-weight: bold;
+    text-decoration: black;
+    margin: 0;
+}
+
+.patoune{
+    width: 30px;
+    height: 100%;
+}
